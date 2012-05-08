@@ -1,0 +1,15 @@
+--- 
+applications: 
+  .: 
+    name: myelasticsearch
+    framework: 
+      name: standalone
+      info: 
+        mem: 64M
+        description: Standalone Application
+        exec: 
+    runtime: java
+    command: bin/elasticsearch -f
+    url: ${name}.${target-base}
+    mem: 512M
+    instances: 1

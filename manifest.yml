@@ -1,0 +1,15 @@
+--- 
+applications: 
+  .: 
+    framework: 
+      name: rails3
+      info: 
+        mem: 256M
+        description: Rails Application
+        exec: 
+    mem: 256M
+    instances: 1
+    runtime: ruby19
+    services: 
+      article-db: 
+        type: mysql
