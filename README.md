@@ -72,3 +72,23 @@ Would you like to deploy from the current directory? [Yn]:
 Application Name: searchapp
 Application Deployed URL [searchapp.cloudfoundry.com]:
 ```
+
+## Seeding the database
+Use the vmc rails-console to seed the database once your application is deployed to Cloud Foundry.  This will add some example articles to the app's database as well as elasticsearch (through the use of Tire). Note that memory used while running the console contributes to your overall application memory limit.
+
+```bash
+vmc rails-console searchapp
+Deploying tunnel application 'caldecott'.
+Uploading Application:
+  Checking for available resources: OK
+  Packing application: OK
+  Uploading (1K): OK
+Push Status: OK
+Staging Application 'caldecott': OK
+Starting Application 'caldecott': OK
+Connecting to 'searchapp' console: OK
+
+irb():001:0> `rake db:seed`
+....
+irb():002:0> exit
+```
